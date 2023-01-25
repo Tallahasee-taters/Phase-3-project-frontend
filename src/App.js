@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react'
 
 function App() {
+  const [getLocations, setGetLocations] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/locations")
+    .then(resp => resp.json())
+    .then(setGetLocations)
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
