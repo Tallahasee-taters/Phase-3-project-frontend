@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from 'react'
 import LocationList from './components/LocationList';
-import Location from './'
+import Location from './components/Location';
 
 function App() {
   const [locations, setLocations] = useState([])
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <LocationList getLocations = {locations}/>
+      <LocationList locations = {locations}/>
       <Location />
     </div>
   );
