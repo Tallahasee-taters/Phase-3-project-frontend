@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'
 
 function App() {
   const [getLocations, setGetLocations] = useState([])
+  
 
   useEffect(() => {
     fetch("http://localhost:9292/locations")
