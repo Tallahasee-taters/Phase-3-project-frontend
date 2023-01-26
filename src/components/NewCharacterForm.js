@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
+//something random to test
+
 function NewCharacterForm(){
     const [newCharacter, setNewCharacter] = useState(initialFormValues)
 
