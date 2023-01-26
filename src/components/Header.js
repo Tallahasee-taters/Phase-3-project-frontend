@@ -6,6 +6,7 @@ function Header () {
     return (
         <div className="Header">
             <div className="header">
+                {/* <img alt="welcome_img" src=""></img> */}
                 <h1>Lord of the Yelps</h1>
                 <NavLink to='/homePage'>
                     <button>Explore Middle Earth</button>

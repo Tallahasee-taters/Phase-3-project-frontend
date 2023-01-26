@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import Review from './Review';
 
 function Location({id, inhabitants, terrain, name, reviews, img_url}){
@@ -12,6 +13,11 @@ function Location({id, inhabitants, terrain, name, reviews, img_url}){
 // debugger
     return (
         <div>
+            <div>
+            <NavLink to="welcomePage">
+                <button>Leave Middle Earth</button>
+            </NavLink>
+            </div>
             <div className='image_placement'>
                 <img className="location_image" alt = "location_image" src = {img_url}></img>
             </div>
