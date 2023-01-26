@@ -23,11 +23,16 @@ function App() {
 
   return (
     <div className="App">
-      
-        <Header />
-        <LocationList locations = {locations}/>
-        <Location />
-        <Review />
+      <Switch>
+        <Route exact path = '/welcomePage'>
+         <Header />
+        </Route>
+        <Route exact path = '/homePage'>
+          <LocationList locations = {locations}/>
+          <Location />
+          <Review />
+        </Route>
+      </Switch>
     </div>
   );
 }

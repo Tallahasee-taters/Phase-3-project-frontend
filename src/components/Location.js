@@ -12,11 +12,18 @@ function Location({id, inhabitants, terrain, name, reviews}){
 // debugger
     return (
         <div>
-            <span className="text"> {name} </span>
+            <div>
+                <span className="text"> {name} </span>
+            </div>
+            <div>
             <span className="text"> {terrain} </span>
+            </div>
+            <div>
             <span className="text"> {inhabitants} </span>
-            {/* <span className="text"> {reviews.map(review => review.rating)} </span> */}
+            </div>
+            <div>
             {mappedReviews}
+            </div>
         </div>
     );
 }

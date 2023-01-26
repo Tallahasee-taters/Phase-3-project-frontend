@@ -3,7 +3,10 @@ import React from 'react';
 function Review({rating, text, character_id, location_id}) {
     return (
         <div>
-            {rating} {text}
+           ★{rating} 
+           <div>
+            {text}
+            </div>
         </div>
     );
 }
