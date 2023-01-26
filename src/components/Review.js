@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Review = () => {
+function Review({rating, text, character_id, location_id}) {
     return (
         <div>
-            
+            {rating} {text}
         </div>
     );
 }
