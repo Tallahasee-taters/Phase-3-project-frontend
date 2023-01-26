@@ -12,17 +12,15 @@ function Location({id, inhabitants, terrain, name, reviews}){
 // debugger
     return (
         <div>
-            <div>
+            
+            
+            <div className='location_details'>
                 <span className="text"> {name} </span>
+                <span className="text"> {terrain} </span>
+                <span className="text"> {inhabitants} </span>
             </div>
-            <div>
-            <span className="text"> {terrain} </span>
-            </div>
-            <div>
-            <span className="text"> {inhabitants} </span>
-            </div>
-            <div>
-            {mappedReviews}
+            <div className='reviews'>
+             {mappedReviews}
             </div>
         </div>
     );
