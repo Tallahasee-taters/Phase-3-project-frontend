@@ -4,3 +4,22 @@
   font-size: larger;
   font-family: fantasy;
 }
+
+.location_details {
+  text-align: center;
+  display: inline-flexbox;
+}
+
+.location_image {
+  display: block;
+  width: 250px;
+  height: auto;
+  padding: 15px;
+  max-width: 60%;
+  height: auto;
+  border: 1px solid;
+}
+
+.image_placement {
+  display: inline-block;
+}

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Review from './Review';
 
-function Location({id, inhabitants, terrain, name, reviews}){
+function Location({id, inhabitants, terrain, name, reviews, img_url}){
 
     const mappedReviews = reviews?.map(review => <Review key={review.id} {...review}/>)
     // useEffect(() => {
@@ -12,8 +12,9 @@ function Location({id, inhabitants, terrain, name, reviews}){
 // debugger
     return (
         <div>
-            
-            
+            <div className='image_placement'>
+                <img className="location_image" alt = "location_image" src = {img_url}></img>
+            </div>
             <div className='location_details'>
                 <span className="text"> {name} </span>
                 <span className="text"> {terrain} </span>
