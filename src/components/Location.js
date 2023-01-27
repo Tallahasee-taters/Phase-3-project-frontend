@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import Review from './Review';
+import { Card, Image, Icon } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
-function Location({id, inhabitants, terrain, name, reviews, img_url}){
+function Location({id, inhabitants, terrain, name, reviews, img_url, average_rating}){
 
     const mappedReviews = reviews?.map(review => <Review key={review.id} {...review}/>)
     // useEffect(() => {
@@ -12,24 +14,12 @@ function Location({id, inhabitants, terrain, name, reviews, img_url}){
     //   }, [])
 // debugger
     return (
-        <div>
-            <div>
-            <NavLink to="welcomePage">
-                <button>Leave Middle Earth</button>
-            </NavLink>
-            </div>
-            <div className='image_placement'>
-                <img className="location_image" alt = "location_image" src = {img_url}></img>
-            </div>
-            <div className='location_details'>
-                <span className="text"> {name} </span>
-                <span className="text"> {terrain} </span>
-                <span className="text"> {inhabitants} </span>
-            </div>
-            <div className='reviews'>
-             {mappedReviews}
-            </div>
-        </div>
+        <Card className='locationCard'
+    href='#card-example-link-card'
+    header={name}
+    meta={inhabitants}
+    description={terrain}
+  />
     );
 }
 
