@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Review from './components/Review';
 import React from 'react';
 import { Route, Switch} from 'react-router-dom';
+import NewCharacterForm from './components/NewCharacterForm'
 
 function App() {
   const [locations, setLocations] = useState([])
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewCharacterForm />
       <Switch>
         <Route exact path = '/welcomePage'>
          <Header />
