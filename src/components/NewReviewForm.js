@@ -1,42 +1,36 @@
 import React from 'react';
 import { useState } from 'react';
 
-//something random to test
-
-function NewCharacterForm(){
+function NewReviewForm(){
     
     const initialFormValues ={
         name: '',
         description: ''
     }
-    const [newCharacter, setNewCharacter] = useState(initialFormValues)
+    const [newReview, setNewReview] = useState(initialFormValues)
 
     const handleChange = event => {
         const {name, value} = event.target
-        setNewCharacter({...newCharacter, [name]:value})
+        setNewReview({...newReview, [name]:value})
     }
 
     const handleSubmit=event => {
         event.preventDefault()
-        // const newCharacter ={
-        //     name: formData.name,
-        //     description: formData.description
-        // }
-    
 
-    fetch("http://localhost:9292/characters", {
+    
+    fetch("http://localhost:9292/reviews", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newCharacter)
+        body: JSON.stringify(newReview)
     })
         .then(res => {
             if (res.status === 201){
             res.json()
-            .then(char =>{
-                console.log(char)
-                setNewCharacter(initialFormValues)
+            .then(rev =>{
+                console.log(rev)
+                setNewReview(initialFormValues)
             })
         }else {
             res.json()
@@ -53,8 +47,9 @@ function NewCharacterForm(){
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name ="name" onChange={handleChange} value = {newCharacter.name} placeholder="Name"/>
-                <input type="text" name ="description" onChange={handleChange} value = {newCharacter.description} placeholder="Description"/>
+                <input type="number" name ="rating" onChange={handleChange} value = {newReview.name} placeholder="Rating"/>
+                <input type="text" name ="text" onChange={handleChange} value = {newReview.description} placeholder="Text"/>
+                
                 <input type="submit" value="Add" />
             </form>
         </div>
