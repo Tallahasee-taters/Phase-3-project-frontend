@@ -26,17 +26,17 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Switch>
-        <Route exact path = '/welcomePage'>
-        <NavBar />
-         <Header className='background_header'/>
+        <Route exact path = '/welcome-Page'>
+         <Header className='background-header'/>
         </Route>
-        <Route exact path = '/homePage'>
-        <NavBar />
+        <Route exact path = '/home-page'>
           <LocationList locations = {locations}/>
-          <Location />
-          <Review />
-          <NewCharacterForm />
+          {/* <NewCharacterForm /> */}
+        </Route>
+        <Route exact path = '/locations/:locationId'>
+          <Location /> 
         </Route>
       </Switch>
     </div>

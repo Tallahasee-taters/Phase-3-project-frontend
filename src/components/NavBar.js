@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
     return (
         <div>
-            <NavLink to='welcomePage'>
+            <NavLink to='/welcome-page'>
             <p className='NavBar'>
                 Return to title
             </p>
