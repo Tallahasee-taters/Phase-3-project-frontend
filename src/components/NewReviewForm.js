@@ -56,4 +56,4 @@ function NewReviewForm(){
     );
 }
 
-export default NewCharacterForm;
+export default NewReviewForm;

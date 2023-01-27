@@ -3,11 +3,20 @@
   text-decoration: underline;
   font-size: larger;
   font-family: fantasy;
+  background-color: black;
+  
 }
 
 .location_details {
-  text-align: center;
-  display: inline-flexbox;
+  text-align: justify;
+  display: inline-grid;
+  
+}
+
+.row {
+  display: inline-block;
+  flex-wrap: wrap;
+  padding: 6px;
 }
 
 .location_image {
@@ -21,4 +30,54 @@
 
 .image_placement {
   display: inline-block;
+}
+
+@keyframes background_img {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.background_header{
+  background-image: url("https://kappafon.github.io/quote-generator/images/aNormalRing_cvlnam.png'");
+  display: block;
+  width: 250px;
+  height: auto;
+  padding: 15px;
+  max-width: 60%;
+  height: auto;
+  background-position: center;
+}
+
+.homeButton{
+  text-align: center;
+  font-family: fantasy;
+}
+
+.NavBar {
+  border: solid;
+  background-color: gold;
+  font-family: fantasy;
+  padding: 25px
+}
+
+.returnButton {
+  font-family: fantasy;
+  font-size: larger;
+}
+
+.locationCard {
+  font-family: fantasy;
+  background-color: black;
+}
+
+.homePageButton{
+  text-align: center;
+}
+
+.body{
+  background-color: black;
 }
