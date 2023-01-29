@@ -61,7 +61,7 @@
   border: solid;
   background-color: gold;
   font-family: fantasy;
-  padding: 25px
+  padding: 1px;
 }
 
 .returnButton {
@@ -71,13 +71,16 @@
 
 .locationCard {
   font-family: fantasy;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .homePageButton{
   text-align: center;
 }
-
+.organization{
+  display: inline-flex;
+  padding: 15px
+}
 .body{
-  background-color: black;
+  /* background-color: black; */
 }

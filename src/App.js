@@ -10,16 +10,39 @@ import { Route, Switch} from 'react-router-dom';
 import NewCharacterForm from './components/NewCharacterForm'
 import 'semantic-ui-css/semantic.min.css'
 import NavBar from './components/NavBar'
+import Character from './components/Character';
+import DetailContainer from './components/DetailContainer';
 
 function App() {
   const [locations, setLocations] = useState([])
   const [reviews, setReviews] = useState([])
+  const [characters, setCharacters] = useState([])
+  
 
   useEffect(() => {
     fetch("http://localhost:9292/locations")
     .then(resp => resp.json())
     .then(setLocations)
   }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:9292/reviews')
+        .then(resp => resp.json())
+        .then(setReviews)
+    }, []);
+
+    useEffect(() => {
+      fetch('http://localhost:9292/characters')
+      .then(resp => resp.json())
+      .then(setCharacters)
+  }, []);
+
+    const mappedReviews = reviews.map((review) => {
+      return <DetailContainer key={review.id} review={review} characters={characters}/>
+    })
+
+     const mappedLocations = locations.map((location) => {return <Location key={location.id} {...location}/>
+    })
   
 
 
@@ -32,11 +55,11 @@ function App() {
          <Header className='background-header'/>
         </Route>
         <Route exact path = '/home-page'>
-          <LocationList locations = {locations}/>
+          {mappedLocations}
           {/* <NewCharacterForm /> */}
         </Route>
         <Route exact path = '/locations/:locationId'>
-          <Location /> 
+          {mappedReviews}
         </Route>
       </Switch>
     </div>

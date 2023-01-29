@@ -3,12 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <div>
+        <div className='NavBar'>
             <NavLink to='/welcome-page'>
-            <p className='NavBar'>
+            <h1 className='organization'>
                 Return to title
-            </p>
+            </h1> 
             </NavLink>
+                <h1 className='organization'>
+                    login
+                </h1>
         </div>
     );
 }
