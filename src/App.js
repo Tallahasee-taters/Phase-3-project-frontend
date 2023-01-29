@@ -6,17 +6,19 @@ import Header from './components/Header';
 // import {Route, Switch} from 'react-router-dom';
 import Review from './components/Review';
 import React from 'react';
-import { Route, Switch} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import NewCharacterForm from './components/NewCharacterForm'
 import 'semantic-ui-css/semantic.min.css'
 import NavBar from './components/NavBar'
 import Character from './components/Character';
 import DetailContainer from './components/DetailContainer';
+import LocationRoutes from './components/LocationRoutes';
 
 function App() {
   const [locations, setLocations] = useState([])
   const [reviews, setReviews] = useState([])
   const [characters, setCharacters] = useState([])
+  const [locationPath, setLocationPath] = useState(0)
   
 
   useEffect(() => {
@@ -37,12 +39,11 @@ function App() {
       .then(setCharacters)
   }, []);
 
-    const mappedReviews = reviews.map((review) => {
-      return <DetailContainer key={review.id} review={review} characters={characters}/>
-    })
+    // const mappedReviews = reviews.map((review) => {
+    //   return <DetailContainer key={review.id} review={review} characters={characters}/>
+    // })
 
-     const mappedLocations = locations.map((location) => {return <Location key={location.id} {...location}/>
-    })
+     
   
 
 
@@ -50,18 +51,12 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        <Route exact path = '/welcome-Page'>
-         <Header className='background-header'/>
-        </Route>
-        <Route exact path = '/home-page'>
-          {mappedLocations}
-          {/* <NewCharacterForm /> */}
-        </Route>
-        <Route exact path = '/locations/:locationId'>
-          {mappedReviews}
-        </Route>
-      </Switch>
+      <Routes>
+        <Route exact path = '/welcome-Page' element={<Header className='background-header'/>} />
+        <Route exact path = '/home-page' element={<LocationList locations={locations} setLocationPath={setLocationPath}/>} />
+        <Route path ="*" element = {<LocationRoutes locations={locations} reviews={reviews} characters={characters} locationPath={locationPath}/>} />
+        {/* <Route exact path = {`/locations/${locationPath}`} element={<DetailContainer reviews={reviews} characters={characters} locationPath={locationPath}/>} /> */}
+      </Routes>
     </div>
   );
 }

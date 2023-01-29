@@ -1,7 +1,8 @@
 import React from 'react';
 
 function Character({character, review}) {
-   const url = window.location.href
+    console.log(review)
+    const url = window.location.href
    const split = url.split("/")
     const finalSplit = split.at(-1)
     return (
