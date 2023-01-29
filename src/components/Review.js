@@ -1,12 +1,13 @@
 import React from 'react';
 import {useEffect, useState} from 'react'
 
-function Review({rating, text, character_id, location_id, review}) {
+function Review({character, review}) {
     return (
         <div> 
            <div>
-            {text}
-            {character_id}
+            {character.name}
+            {review.text}
+            {review.rating}
             </div>
         </div>
     );

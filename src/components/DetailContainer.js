@@ -1,15 +1,17 @@
 import React from 'react';
-import Character from './Character';
 import Review from './Review';
+import NewReviewForm from './NewReviewForm';
 
-function DetailContainer({review, characters}) {
-    const mappedCharacters = characters.map((character) => 
-     {return <Character review={review} character={character} key={character.id} />})
-
+function DetailContainer({reviews, characters}) {
+    console.log(window.location.href)
+    const locationPath = window.location.href.slice(32)
+    const filteredReviews = reviews.filter(review => review.location_id == locationPath)
+    const mappedReviews = filteredReviews.map(review => <Review review={review} character={review.character} key={review.id} />)
     return (
         <div>
-            <Review review={review}/>
-            {mappedCharacters}
+            {mappedReviews}
+            <NewReviewForm />
+            
         </div>
     );
 }
