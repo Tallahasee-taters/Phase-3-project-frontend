@@ -10,8 +10,6 @@ import {Routes, Route} from 'react-router-dom';
 import NewCharacterForm from './components/NewCharacterForm'
 import 'semantic-ui-css/semantic.min.css'
 import NavBar from './components/NavBar'
-import Character from './components/Character';
-import DetailContainer from './components/DetailContainer';
 import LocationRoutes from './components/LocationRoutes';
 
 function App() {
@@ -39,9 +37,7 @@ function App() {
       .then(setCharacters)
   }, []);
 
-    // const mappedReviews = reviews.map((review) => {
-    //   return <DetailContainer key={review.id} review={review} characters={characters}/>
-    // })
+    
 
      
   
@@ -54,7 +50,7 @@ function App() {
       <Routes>
         <Route exact path = '/welcome-Page' element={<Header className='background-header'/>} />
         <Route exact path = '/home-page' element={<LocationList locations={locations} setLocationPath={setLocationPath}/>} />
-        <Route path ="*" element = {<LocationRoutes locations={locations} reviews={reviews} characters={characters} locationPath={locationPath}/>} />
+        <Route path ="*" element = {<LocationRoutes locations={locations} reviews={reviews} characters={characters} locationPath={locationPath} setReviews={setReviews} setLocations={setLocations}/>} />
         {/* <Route exact path = {`/locations/${locationPath}`} element={<DetailContainer reviews={reviews} characters={characters} locationPath={locationPath}/>} /> */}
       </Routes>
     </div>

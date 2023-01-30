@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Review from './Review';
-import { Card, Image, Icon } from 'semantic-ui-react';
-import Character from './Character';
+import { Card } from 'semantic-ui-react';
 
 function Location({id, inhabitants, terrain, name, setLocationPath}){
     const navigate = useNavigate()
@@ -18,11 +16,6 @@ function Location({id, inhabitants, terrain, name, setLocationPath}){
             <Card.Content>
               <Card.Header  >{name}</Card.Header>
               <Card.Description>{terrain}</Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name="star" />
-              </a>
             </Card.Content>
           </Card>
         </Card.Group>
