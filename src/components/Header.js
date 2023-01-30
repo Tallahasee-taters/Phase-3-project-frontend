@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Card } from 'semantic-ui-react';
+import NewCharacterForm from './NewCharacterForm';
 
-function Header () {
+function Header ({characters}) {
     // const handleClick = 
     return (
         <div className="Header">
@@ -12,6 +12,7 @@ function Header () {
                 <NavLink to='/home-page' className='homePageButton'>
                     Explore Middle Earth
                 </NavLink>
+                <NewCharacterForm />
             </div>  
         </div>
     )
