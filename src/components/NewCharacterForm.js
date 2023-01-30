@@ -55,7 +55,7 @@ function NewCharacterForm(){
             <form onSubmit={handleSubmit}>
                 <input type="text" name ="name" onChange={handleChange} value = {newCharacter.name} placeholder="Name"/>
                 <input type="text" name ="description" onChange={handleChange} value = {newCharacter.description} placeholder="Description"/>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Create Character" />
             </form>
         </div>
     );

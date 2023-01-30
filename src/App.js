@@ -48,7 +48,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route exact path = '/welcome-Page' element={<Header className='background-header'/>} />
+        <Route exact path = '/welcome-Page' element={<Header className='background-header' characters={characters}/>} />
         <Route exact path = '/home-page' element={<LocationList locations={locations} setLocationPath={setLocationPath}/>} />
         <Route path ="*" element = {<LocationRoutes locations={locations} reviews={reviews} characters={characters} locationPath={locationPath} setReviews={setReviews} setLocations={setLocations}/>} />
         {/* <Route exact path = {`/locations/${locationPath}`} element={<DetailContainer reviews={reviews} characters={characters} locationPath={locationPath}/>} /> */}
